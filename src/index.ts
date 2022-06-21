@@ -8,8 +8,9 @@
 
 import { testData, testData2, testData3 } from './data';
 import { arrayFind } from './utils/arrayFind';
-import { arrayAvg } from './utils/arrayAvg'
+import { arrayAvg } from './utils/arrayAvg';
+import { arrayChunk } from './utils/arrayChunk';
   
 console.log(
-    arrayAvg(testData, true)
+    arrayChunk(testData, 3)
 );
