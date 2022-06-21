@@ -7,7 +7,7 @@ export const arrayFind = (arr: TPropsType, search: string | RegExp): TResultType
 
         return typeof item === 'string' && 
         (typeof search !== 'string' 
-        ? (search as RegExp).test(item) 
+        ? search.test(item) 
         : item === search) 
         ? item 
         : null;

@@ -7,45 +7,9 @@
 //          let result2 = array_find(testData, "Rafshan") // ["Rafshan"]
 
 import { testData, testData2, testData3 } from './data';
-import {arrayFind} from './utils/arrayFind';
+import { arrayFind } from './utils/arrayFind';
+import { arrayAvg } from './utils/arrayAvg'
   
 console.log(
-    arrayFind(testData, /^raf.*/i)
+    arrayAvg(testData, true)
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if (typeof item === 'string') {
-        //     if (regex.test(item)) {
-        //         return item;
-        //     }
-        // }
-        // return;
