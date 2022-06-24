@@ -1,16 +1,12 @@
-//          1 (1бал)
-//          Сделать функцию поиска значений в массиве.
+import { testData, testData2, testData3, testData4 } from './data';
+import { arrayFind } from './utils/1_arrayFind';
+import { arrayAvg } from './utils/2_arrayAvg';
+import { arrayChunk } from './utils/3_arrayChunk';
+import { arraySkip } from './utils/4_arraySkip';
+import { arrayContains } from './utils/5_arrayContains';
+import { arrayGet } from './utils/6_arrayGet';
 
-//          Синтаксис: array_find(arr: array, search: string|regex): string|number[]|null
-//          Пример: 
-//          let result = array_find(testData, '/^raf.*/i') // ["Rafshan"]
-//          let result2 = array_find(testData, "Rafshan") // ["Rafshan"]
-
-import { testData, testData2, testData3 } from './data';
-import { arrayFind } from './utils/arrayFind';
-import { arrayAvg } from './utils/arrayAvg';
-import { arrayChunk } from './utils/arrayChunk';
   
 console.log(
-    arrayChunk(testData, 3)
+    arrayGet(testData4 as [], '[17][0][0][0][11][0][name]')
 );

@@ -68,7 +68,7 @@ export const testData3 = [
 		}
 	},
 ]
-let testData4 = [
+export const testData4 = [
 	{
 		name: "Vasya",
 		email: "vasya@example.com",
