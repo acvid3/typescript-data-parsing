@@ -5,8 +5,9 @@ import { arrayChunk } from './utils/3_arrayChunk';
 import { arraySkip } from './utils/4_arraySkip';
 import { arrayContains } from './utils/5_arrayContains';
 import { arrayGet } from './utils/6_arrayGet';
+import { arraySearch } from './utils/7_arraySearch';
 
   
 console.log(
-    arrayGet(testData4 as [], '[17][0][0][0][11][0][name]')
+    arraySearch(testData4 as [], 'Rafshan')
 );
