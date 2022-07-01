@@ -6,8 +6,9 @@ import { arraySkip } from './utils/4_arraySkip';
 import { arrayContains } from './utils/5_arrayContains';
 import { arrayGet } from './utils/6_arrayGet';
 import { arraySearch } from './utils/7_arraySearch';
+import { arrayCombine } from './utils/8_arrayCombine';
 
   
 console.log(
-    arraySearch(testData4 as [], 'Rafshan')
+    arrayCombine(testData as [], testData2 as [])
 );
