@@ -15,6 +15,11 @@ const isRegex = (search: string | RegExp): boolean => {
 const isContains = (arr, search, path) => isRegex(search) ? (search as RegExp).test(arrayGet(arr, path)) : arrayGet(arr, path) === search;
 
 export const arraySearch = (arr: [], search: string | RegExp, path?: string): [path: string, value: string | number][] => {
+
+    const data = arrayGet(arr, path);
+    console.log('arrayGet', data);
+    
+
     const paths = [];
     getPath('', arr, paths);    
     

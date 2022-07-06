@@ -1,6 +1,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/utils/test.ts
+/src/utils/9_arrayNormalize.ts
 
 # testing
 /coverage

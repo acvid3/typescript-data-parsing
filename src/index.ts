@@ -7,8 +7,9 @@ import { arrayContains } from './utils/5_arrayContains';
 import { arrayGet } from './utils/6_arrayGet';
 import { arraySearch } from './utils/7_arraySearch';
 import { arrayCombine } from './utils/8_arrayCombine';
+import { arrayNormalize } from './utils/9_arrayNormalize';
 
   
 console.log(
-    arrayCombine(testData as [], testData2 as [])
+    arraySearch(testData4 as [], /^raf.*/i, '[17][0][0][0]')
 );
