@@ -1,10 +1,18 @@
-export const arrayGet = (arr: [], path: string): any => {
-    let result = arr;
-    const keys = path.split(new RegExp(/\[|]|\./)).filter(item => item !== '');
-
-    for (let key of keys) result = result[key] !== undefined 
-        ? result[key]
-        : new Error('Error: bad paths')
+export const arrayGet = (arr, path) => {
+	let result = arr;
+	const keys = path
+		.split(new RegExp(/\[|]|\./))
+		.filter(item => item !== '')
     ;
-    return result;
+        
+	for (let key of keys) {
+		if (result[key] !== undefined ) {
+			result = result[key];
+		} else {
+			result = undefined;
+			break;
+		}
+	}
+    
+	return result;
 }

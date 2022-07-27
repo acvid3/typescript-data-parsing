@@ -11,5 +11,5 @@ import { arrayNormalize } from './utils/9_arrayNormalize';
 
   
 console.log(
-    arraySearch(testData4 as [], /^raf.*/i, '[17][0][0][0]')
+    arrayNormalize(testData4 as [], {age: 'number'}, false)
 );

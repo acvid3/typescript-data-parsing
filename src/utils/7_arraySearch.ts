@@ -1,27 +1,29 @@
 import { arrayGet } from './6_arrayGet';
 
-const getPath = (prevKey: string, data, paths) => {
-   for (let key in data) {
-        data[key] instanceof Object 
-        ? getPath(prevKey + `[${key}]`, data[key], paths)
-        : paths.push(prevKey + `[${key}]`);
-    }
+const getPath = (prevPath, data, cb) => {
+	for (let key in data) {
+		const currentKeyPath = prevPath + `[${key}]`;
+		data[key] instanceof Object
+			? getPath(currentKeyPath, data[key], cb)
+			: cb(currentKeyPath, data[key]);
+	}
 }
 
-const isRegex = (search: string | RegExp): boolean => {
-    return search instanceof RegExp;
-}
-
-const isContains = (arr, search, path) => isRegex(search) ? (search as RegExp).test(arrayGet(arr, path)) : arrayGet(arr, path) === search;
+const createCheckValue = (search) => search instanceof RegExp
+	? (value) => search.test(value)
+	: (value) => search === value
+;
 
 export const arraySearch = (arr: [], search: string | RegExp, path?: string): [path: string, value: string | number][] => {
+    const results = [];
 
-    const data = arrayGet(arr, path);
-    console.log('arrayGet', data);
-    
+	const checkValue = createCheckValue(search);
 
-    const paths = [];
-    getPath('', arr, paths);    
-    
-    return paths.filter(path => isContains(arr, search, path) ? path : false).map(path => [path, arrayGet(arr, path)]);
+	getPath('', arr, (path, value) => {
+		if (checkValue(value)) {
+			results.push([path, value]);
+		}
+	});
+
+	return results;
 }
